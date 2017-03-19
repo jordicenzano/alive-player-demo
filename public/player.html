@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Alive Player demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="./css/video-js.min.css" rel="stylesheet"> <!--Version: 5.14.1 -->
+    <script src="./js/video.js"></script> <!--Version: 5.14.1-->
+    <script src="./js/videojs-contrib-hls.js"></script> <!--Version: 4.0.2 -->
+
+    <script src="./js/alive-player-demo.js"></script>
+</head>
+<body onload="onLoadPage()">
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 id="title">Alive automated player demo</h1>
+            <p id="eventName"> Name (jobId)</p>
+            <p id="jobState"> WAITING</p>
+            <div class="bs-general" align="center">
+            <video width=640 height=360 id="jsVideoPlayback" poster="./pics/brightcove_logo_black.jpg" class="video-js vjs-default-skin row" controls></video>
+            </div>
+        </div>
+    </div>
+<!--
+   Now, initialize your player. That's it!
+   -->
+    <script>
+        var player = videojs('jsVideoPlayback');
+        var type = "live";
+    </script>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "eventName": "JOC TEST",
+  "jobId": "IDTEST",
+  "isStreaming": true,
+  "playbackUrl": "http://playback-qa.a-live.io/2fb2ddc27b5d46d4a42c1121d21e741e/us-west-2/playlist.m3u8"
+}
