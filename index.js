@@ -144,23 +144,23 @@ function processNotification(data) {
 
     console.log("Notification received: " + JSON.stringify(data));
 
-    if ( ("notification_body" in data) && ("event" in data.notification_body) && (data.notification_body.event === "first_segment_uploaded") && ("job" in data.notification_body) && ("playback_url" in data.notification_body.job) ) {
+    if ( ("event" in data) && (data.event === "first_segment_uploaded") && ("job" in data) && ("playback_url" in data.job) ) {
         ret_data = {
             "eventName": "",
             "jobId": "",
             "isStreaming": true,
-            "playbackUrl": data.notification_body.job.playback_url
+            "playbackUrl": data.job.playback_url
         };
 
-        if ("pass_through" in data.notification_body.job)
-            ret_data.eventName = data.notification_body.job.pass_through;
+        if ("pass_through" in data.job)
+            ret_data.eventName = data.job.pass_through;
 
-        if ("id" in data.notification_body.job)
-            ret_data.jobId = data.notification_body.job.id;
+        if ("id" in data.job)
+            ret_data.jobId = data.job.id;
 
         console.log("Start streaming: " + JSON.stringify(ret_data));
 
-    } else if ( ("notification_body" in data) && ("event" in data.notification_body) && (data.notification_body.event === "output_finished") ) {
+    } else if ( ("event" in data) && (data.event === "output_finished") ) {
         ret_data = {
             "eventName": "",
             "jobId": "",
