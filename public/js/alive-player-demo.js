@@ -88,4 +88,5 @@ function unloadVideo() {
     console.log("unload playlist");
 
     player.pause();
+    player.reset();
 }
